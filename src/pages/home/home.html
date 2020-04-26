@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>Oodrive</ion-title>
+    <ion-buttons end>
+    </ion-buttons>
+</ion-navbar>
+</ion-header>
+
+<ion-content >
+ 
+
+   
+<div class="upload">
+  <input type="file" [(ngModel)]="file"  class="custom-file-input" ng2FileSelect [uploader]="uploader">
+  <button ion-button *ngIf="file != null" color="danger" (click)="uploader.uploadAll()"><ion-icon name="cloud-upload"  class="icon-upload"></ion-icon> Upload</button>
+</div>
+    <ion-item  *ngFor="let item of items">
+   
+      <div class="icon-type">
+        <ion-icon name="folder-open" *ngIf="item.folder"></ion-icon>
+        <ion-icon name="document" *ngIf="!item.folder"></ion-icon>
+      </div>
+      <div class="name">
+       <h2>{{item.name}}</h2>
+      </div>
+      <div class="icon-type">
+        <ion-icon *ngIf="!item.folder" (click)="downloadFile(item.id,item.name)" name="cloud-download"></ion-icon>
+      </div>
+      <div style="clear: both;"></div>
+        <div class="createItem">
+          <p>Cr : {{item.creation | date :  "dd.MM.yyyy:HH:mm"}}</p>
+         </div>
+         <div style="clear: both;"></div>
+         <div class="createItem">
+          <p>M : {{item.creation | date :  "dd.MM.yyyy:HH:mm"}}</p>
+         </div>
+    </ion-item>
+
+
+</ion-content>

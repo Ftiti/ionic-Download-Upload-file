@@ -1,0 +1,49 @@
+page-home {
+   .icon-type{
+       width: 10%;
+       float: left;
+       height: auto;
+       text-align: center;
+   }
+   .name{
+    width: 80%;
+    float: left;
+    height: auto;
+}
+.createItem{
+    width: 90%;
+    height: auto;
+    margin-left: 10%;
+}
+.upload{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    text-align: left;
+}
+.icon-upload{
+    margin-right: 5px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: #f53d3d;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    color:#fff;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+ 
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+}
